@@ -13,7 +13,7 @@
 <a name="introduction"></a>
 ## Why yet another tutorial for installing Nightscout?
 
-When I found out about Nightscout I felt like drowning by the huge amount of info pages out there on the Internet. I read a lot about the existing solutions with [Azure](http://www.azure.com/), [Hiroku](https://www.heroku.com/) or [Vagrant](https://www.vagrantup.com/). The reason I don't use these is that I have been running my own private (web) server for a long time and therefore I wanted to install it on my existing server. Thus I became interested in how to setup Nightscout on Linux. Unfortunately I did not find an article for the setup, so I decided to adapt [this](https://github.com/jaylagorio/Nightscout-on-Windows-Server) installation guide and rewrite it for Linux.
+When I found out about [Nightscout](http://www.nightscout.info/) I felt like drowning by the huge amount of info pages out there on the Internet. I read a lot about the existing solutions with [Azure](http://www.azure.com/), [Hiroku](https://www.heroku.com/) or [Vagrant](https://www.vagrantup.com/). The reason I don't use these is that I have been running my own private (web) server for a long time and therefore I wanted to install it on my existing server. Thus I became interested in how to setup Nightscout on Linux. Unfortunately I did not find an article for the setup, so I decided to adapt [this](https://github.com/jaylagorio/Nightscout-on-Windows-Server) installation guide and rewrite it for Linux.
 
 If you are heading for a quick development setup, you might prefer to use a [docker image](https://github.com/nightscout/nightscout-docker).
 
@@ -158,5 +158,5 @@ Start and enable
 
 Finally check if the service is running:
 ```
-# systenctl status nightscout.service
+# systemctl status nightscout.service
 ```
