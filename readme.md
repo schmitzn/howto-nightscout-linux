@@ -130,7 +130,7 @@ Setting the `SSL_CERT` to `fullchain.pem` worked for me.
 <a name="create-service"></a>
 ### Create a service
 
-I recommend using systemd to use a service which automatically starts Nightscout on system startup. To do so, create ``/etc/systemd/system/nightscout.service`` and paste the following configuration:
+I recommend using a systemd service which automatically starts Nightscout on system startup. To do so, create ``/etc/systemd/system/nightscout.service`` and paste the following configuration:
 ```
 [Unit]
 Description=Nightscout Service      
