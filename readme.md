@@ -1,4 +1,5 @@
-# Table of Contents
+# How to install Nightscout on Linux
+## Table of contents
 * [Why yet another tutorial on installing Nightscout?](#introduction)
 * [Before we get started](#before-we-get-started)
 * [Installation and configuration](#installation-and-configuration)
@@ -10,12 +11,14 @@
   * [Create service](#create-service)
 
 <a name="introduction"></a>
-# Why yet another tutorial for installing Nightscout?
+## Why yet another tutorial for installing Nightscout?
 
 When I found out about Nightscout I felt like drowning by the huge amount of info pages out there on the Internet. I read a lot about the existing solutions with [Azure](http://www.azure.com/), [Hiroku](https://www.heroku.com/) or [Vagrant](https://www.vagrantup.com/). The reason I don't use these is that I have been running my own private (web) server for a long time and therefore I wanted to install it on my existing server. Thus I became interested in how to setup Nightscout on Linux. Unfortunately I did not find an article for the setup, so I decided to adapt [this](https://github.com/jaylagorio/Nightscout-on-Windows-Server) installation guide and rewrite it for Linux.
 
+If you are heading for a quick development setup, you might prefer to use a [docker image](https://github.com/nightscout/nightscout-docker).
+
 <a name="before-we-get-started"></a>
-# Before we get started
+## Before we get started
 
 As I mentioned above, this documentation is based on the docs for [Nightscout on Windows Server](https://github.com/jaylagorio/Nightscout-on-Windows-Server). I am going to show you how to install Nightscout on [Arch Linux](https://www.archlinux.org/). I assume that you have installed Linux on your system already.
 
@@ -25,10 +28,10 @@ The instructions in the examples may differ from other Linux distributions like 
 
 
 <a name="installation-and-configuration"></a>
-# Installation and configuration
+## Installation and configuration
 
 <a name="install-required-packages"></a>
-## Install required packages
+### Install required packages
 There are a couple of packages that need to be installed:
 - [MonboDB](https://wiki.archlinux.org/index.php/MongoDB) and tools
 - [git](https://wiki.archlinux.org/index.php/git)
@@ -41,7 +44,7 @@ There are a couple of packages that need to be installed:
 ```
 
 <a name="configure-mongodb"></a>
-## Configure MongoDB
+### Configure MongoDB
 After installation, start/enable the `mongodb.service` daemon:
 ```
 # systemctl enable mongodb.service
@@ -56,7 +59,7 @@ $ mongo
 ```
 
 <a name="install-nightscout"></a>
-## Download and install Nightscout
+### Download and install Nightscout
 
 Create a folder for your nightscout installation. Then clone the Nightscout repository. If you have your own fork, use the URL to your git repository instead.
 
@@ -94,12 +97,12 @@ node server.js
 ```
 
 <a name="run-nightscout"></a>
-## Run Nightscout
+### Run Nightscout
 
 You can now run Nightscout by entering `./start.sh`. If you have used a different way to configure the system variables, just type `node server.js` to start the server.
 
 <a name="enable-ssl"></a>
-## Enable SSL support
+### Enable SSL support
 
 You can obtain your own trusted SSL certificate at [LetsEncrypt.org](https://letsencrypt.org/).
 
@@ -125,7 +128,7 @@ java.security.cert.CertPathValidatorException: Trust anchor for certification pa
 Setting the `SSL_CERT` to `fullchain.pem` worked for me.
 
 <a name="create-service"></a>
-## Create service
+### Create service
 
 I recommend using systemd to use a service which automatically starts Nightscout on system startup. To do so, create ``/etc/systemd/system/nightscout.service`` and paste the following configuration:
 ```
