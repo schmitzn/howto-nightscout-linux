@@ -1,6 +1,6 @@
 # How to install Nightscout on Linux
 ## Table of contents
-* [Why yet another tutorial on installing Nightscout?](#introduction)
+* [Why yet another tutorial for installing Nightscout?](#introduction)
 * [Before we get started](#before-we-get-started)
 * [Installation and configuration](#installation-and-configuration)
   * [Install required packages](#install-required-packages)
@@ -8,7 +8,7 @@
   * [Download and install Nightscout](#install-nightscout)
   * [Run Nightscout](#run-nightscout)
   * [Enable SSL support](#enable-ssl)
-  * [Create service](#create-service)
+  * [Create a service](#create-service)
 
 <a name="introduction"></a>
 ## Why yet another tutorial for installing Nightscout?
@@ -128,7 +128,7 @@ java.security.cert.CertPathValidatorException: Trust anchor for certification pa
 Setting the `SSL_CERT` to `fullchain.pem` worked for me.
 
 <a name="create-service"></a>
-### Create service
+### Create a service
 
 I recommend using systemd to use a service which automatically starts Nightscout on system startup. To do so, create ``/etc/systemd/system/nightscout.service`` and paste the following configuration:
 ```
